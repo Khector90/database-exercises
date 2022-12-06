@@ -1,5 +1,5 @@
 USE codeup_test_db;
-DROP TABLE IF EXISTS album;
+
 create table albums(
     id int unsigned auto_increment not null,
     artist VARCHAR(50),
@@ -10,4 +10,5 @@ create table albums(
     PRIMARY KEY (ID)
 );
 DESCRIBE ALBUMS;
+
 SELECT * FROM albums;

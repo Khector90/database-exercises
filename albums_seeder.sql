@@ -1,4 +1,6 @@
 USE codeup_test_db;
+truncate albums;
+
 -- add data rows
 # INSERT INTO albums(artist, name, release_date, sales, genre)
 # values ('Led Zeppelin', 'Led Zeppelin IV', 1971, 30.4, 'Heavy Metal');
@@ -20,6 +22,8 @@ values ('Micheal Jackson', 'Thriller', 1982, 50.2, 'Pop'),
     ('Led Zeppelin', 'Led Zeppelin IV', 1971, 30.4, 'Heavy Metal'),
     ('The Beatles', 'Sgt. Pepper\s Lonely Hearts Club Band', 1967, 18.3, 'Rock'),
     ('Nirvana', 'Nevermind', 1991, 17.8, 'Grunge');
+
+
 
 
 

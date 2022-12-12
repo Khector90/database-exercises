@@ -11,3 +11,11 @@ where hire_date IN (
     from employees
     where hire_date ='1990-10-22'
     );
+
+select distinct title
+from titles
+where emp_no IN (
+    select emp_no
+    from employees
+    where first_name = 'Aamod'
+    );

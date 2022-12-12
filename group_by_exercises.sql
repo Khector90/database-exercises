@@ -23,7 +23,16 @@ and last_name not like  '%qu%'
 group by last_name
 order by count(last_name)ASC;
 
+SELECT DISTINCT COUNT(last_name), last_name
+FROM employees
+WHERE last_name LIKE '%q%'
+  AND last_name NOT LIKE '%qu%'
+GROUP BY last_name;
 
+SELECT DISTINCT COUNT(*), gender
+FROM employees
+WHERE first_name IN ('Irene', 'Vidya', 'Maya')
+GROUP BY gender;
 
 
 

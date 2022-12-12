@@ -42,3 +42,18 @@ from employees as e
 where t.to_date = '9999-01-01' and de.to_date = '9999-01-01' and d.dept_name = 'customer service'
 group by t.title;
 
+select e.dept_name as Department_Name, concat(d.first_name, ' ', d.last_name) as Department_Manager, s.salary
+from departments as e
+         join dept_manager as dm
+              on e.dept_no = dm.dept_no
+         join employees d
+              on d.emp_no = dm.emp_no
+         join titles as t
+              on dm.emp_no = t.emp_no
+        join salaries as s
+              on d.emp_no = s.emp_no
+where t.title = 'Manager'
+  and curdate() < dm.to_date
+  and curdate() < s.to_date
+order by e.dept_name;
+

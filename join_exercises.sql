@@ -23,14 +23,22 @@ where gender = 'F'
  and t.title = 'Manager'
     and curdate() < dm.to_date
 order by e.dept_name;
+#  close but no cigar maybe visit again later
 
-select distinct t.title, count(t.emp_no) as total
-from titles as t
-    join dept_emp as de
-        on t.emp_no = de.emp_no
-where de.dept_no = 'd009'
-  and curdate() < t.to_date
-group by title
-order by total desc;
+# select distinct t.title, count(t.title) as total
+# from titles as t
+#     join dept_emp as de
+#         on t.emp_no = de.emp_no
+# where de.dept_no = 'd009'
+#   and curdate() < t.to_date
+# group by title
+# order by total desc;
 
+select t.title, count(t.title) as total
+from employees as e
+    join titles as t on e.emp_no = t.emp_no
+    join dept_emp as de on e.emp_no =de.emp_no
+    join departments as d on d.dept_no = de.dept_no
+where t.to_date = '9999-01-01' and de.to_date = '9999-01-01' and d.dept_name = 'customer service'
+group by t.title;
 

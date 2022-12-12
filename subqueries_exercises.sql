@@ -19,3 +19,19 @@ where emp_no IN (
     from employees
     where first_name = 'Aamod'
     );
+
+select first_name, last_name, gender
+from employees
+where gender = 'F' and emp_no in
+(   select emp_no
+    from dept_manager
+    where curdate() < to_date
+    );
+
+select first_name, last_name, gender, dept_name
+from employees
+where gender = 'F' and emp_no in
+    (   select emp_no
+    from dept_manager
+     where curdate() < to_date
+     );
